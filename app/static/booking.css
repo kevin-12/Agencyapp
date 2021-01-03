@@ -1,0 +1,16 @@
+.booking_form{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: "url('static/images/babby.jpg')";
+  
+    align-items: center;
+    
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    font-size: larger;
+  
+  
+  
+  }

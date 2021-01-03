@@ -1,0 +1,33 @@
+{% from "macro.html" import render_field %} 
+
+{% extends 'base.html' %}
+{% block header %}
+<p>{% block title %}View Profile Pic{% endblock %}</p>
+{% endblock %}
+{% block content %}
+
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='view.css') }}" />
+<div class="container container-flex">
+   
+
+        {% for i in nanny_pictures %}
+        <img src="{{ url_for('static', filename='Profile/CV/'+i.profile_picture) }}" alt="" class="imagefull" >
+       
+        <h2><strong> {{i.Name }}</strong> </h2>
+
+        <h2> <strong>Summary</strong></h2>
+        <p>
+            {{ i.summary }}
+        </p>
+    <a href="{{url_for('nanny.thank_you_add_to_db',Username=i.Username)}}"><button>Book</button></a>
+</p>
+     
+    
+</div>
+  
+
+{% endfor %}
+    
+
+
+{% endblock %}

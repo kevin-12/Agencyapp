@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+
+
+
+
+/* layout */
+
+
+
+img {
+    width:20%;
+  
+    display: block;
+}
+
+
+
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+/* layout  */
+
+.container {
+    width: 100%;
+    margin: 10%;
+
+    
+ 
+}
+
+.container-flex {
+    
+    justify-content: space-between;
+  
+}
+
+
+
+
+   @media (min-width:675px){
+    .container-flex{
+        flex-direction: row;
+       }
+       main{
+           width: 75%;
+       }
+    }

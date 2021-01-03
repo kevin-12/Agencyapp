@@ -1,0 +1,53 @@
+{% from "macro.html" import render_field %}
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+
+<style>
+  .container {
+    margin-top: 10%;
+    margin-right:10%;
+    margin-bottom: 50%;
+    margin-left: 2%;
+
+
+
+  }
+</style>
+<div class="container">
+  <div class="w3-container">
+
+
+
+    <div id="id01">
+      <div class="w3-modal-content  " style="max-width:600px">
+
+
+        <form action="{{url_for('auth.login')}}" method="POST">
+          <div class="w3-section">
+
+
+            <span class="w3-input w3-border w3-margin-bottom"> {{ render_field(form.Username ) }} </span>
+
+
+            <span class="w3-input w3-border w3-margin-bottom">{{ render_field(form.password) }}</span>
+
+            <button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit">Login</button>
+            
+          </div>
+        </form>
+
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

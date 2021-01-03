@@ -1,0 +1,11 @@
+{% from "macro.html" import render_field %} 
+{% extends 'base.html' %}
+{% block header %}
+<p>{% block title %}View and Update{% endblock %}</p>
+{% endblock %}
+{% block content %}
+
+
+  <p>The user is already take <a href="{{url_for('auth.application')}}">Please try again</a></p>
+  {% endblock %}
+

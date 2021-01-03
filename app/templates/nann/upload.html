@@ -1,0 +1,24 @@
+
+{% from "macro.html" import render_field %} 
+{% extends 'base.html' %}
+{% block header %}
+<p>{% block title %}Update {% endblock %}</p>
+{% endblock %}
+{% block content %}
+<div class="w3-content w3-container w3-padding-64">
+    <form  method="POST" enctype="multipart/form-data">
+     
+
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+
+
+
+
+    <textarea name="summary" id="summary" cols="100" rows="20" required></textarea>
+    <button type="add" value="upload"> add</button>
+</form>
+</div>
+{% endblock %}
+
+

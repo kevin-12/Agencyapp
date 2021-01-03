@@ -1,0 +1,46 @@
+{% from "macro.html" import render_field %}
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}Application{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+div class="w3-content w3-container w3-padding-64" id="about">
+<style>
+  .container {
+    margin-bottom: 50%;
+    margin-left: 25%;
+
+
+  }
+</style>
+<div class="container">
+
+
+
+ 
+  <div class="w3-content w3-container w3-padding-64">
+      <form action="{{url_for('auth.application')}}" method="POST" enctype="multipart/form-data">
+        
+        <dl>
+          {{message}}
+          {{ render_field(applicationForm.name) }}
+          {{ render_field(applicationForm.username) }}
+          {{ render_field(applicationForm.email) }}
+          {{ render_field(applicationForm.password) }}
+          {{ render_field(applicationForm.confirm) }}
+          {{ render_field(applicationForm.city) }}
+          <br>
+          
+          <div><p><strong>Curriculum</strong></p>
+            <input type="file" name="file" title="Curriculum" required> </div>
+          {{ render_field(applicationForm.accept_tos) }}
+        </dl>
+        
+        
+          <input type=submit value=APPLY> 
+      </form>
+   
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% from "macro.html" import render_field %}
+{% extends 'base.html' %}
+{% block header %}
+<p>{% block title %}{% endblock %}</p>
+{% endblock %}
+{% block content %}
+
+<style>
+  img{
+
+    height:40%;
+  }
+</style>
+<div class="w3-content w3-container w3-padding-64">
+  <form>
+    <div Username="comp_select">
+      
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='book.css') }}" />
+     
+
+
+      
+      <main class="wrapper">
+        
+        <section class="profiles" id="profiles">
+          <ul>
+ 
+            <li>
+              {% for i in nannies %}
+              
+              <figure>
+                <!-- Photo by Drew Farwell on Unsplash -->
+                
+                <img src="{{ url_for('static', filename='Profile/CV/'+i.profile_picture) }}" alt="" class="image" >
+                <figcaption>
+                  <h3><a href="{{url_for('nanny.view_profile',Username=i.Username)}}"> {{ i.Name  }}</a> </h3>
+                </figcaption>
+              </figure>
+              <p>
+                Another world citizens of distant epochs from which we spring descended from astronomers Orion's sword
+                shores of the cosmic ocean.
+              </p>
+              {% endfor %}
+           </li>
+            
+          </ul>
+        </section>
+       
+      </main>
+      <footer>
+        
+      </footer>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

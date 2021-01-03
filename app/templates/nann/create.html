@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}Client{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<div class="w3-content w3-container w3-padding-64">
+<form method="post">
+    <label for="title">Job title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="first_name">First Name</label>
+    <input name="first_name" id="first_name" value="{{ request.form['first_name'] }}" required>
+    <label for="last_name=">Last Name</label>
+    <input name="last_name" id="last_name" value="{{ request.form['last_name'] }}" required>
+    <label for="year_of_experience">Years of experinece</label>
+    <input name="year_of_experience" id="year_of_experience" value= "{{ request.form['year_of_experience'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <input type="submit" value="Save">
+</form>
+</div>
+{% endblock %}

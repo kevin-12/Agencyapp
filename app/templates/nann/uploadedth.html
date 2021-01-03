@@ -1,0 +1,20 @@
+{% from "macro.html" import render_field %} 
+{% extends 'base.html' %}
+{% block header %}
+<p>{% block title %} <span><a href="{{url_for('auth.login')}}" >login </a> to enjoy our memberships discounts.Explot more!!</span>{% endblock %}</p>
+{% endblock %}
+{% block content %}
+<style>
+        .container {
+          margin-bottom: 50%;
+          margin-left: 25%;
+      
+      
+        }
+      </style>
+      <div class="container">
+<div class="w3-content w3-container w3-padding-64">
+<p>Thank your profile is set !</p>
+</div>
+</div>
+{% endblock %}

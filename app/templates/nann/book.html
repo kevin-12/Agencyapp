@@ -1,0 +1,99 @@
+{% from "macro.html" import render_field %}
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+  .container {
+    margin-bottom: 50%;
+    margin-left: 25%;
+
+
+  }
+</style>
+<div class="container">
+  <div class="w3-content w3-container w3-padding-64 w3-margin-bottom">
+    <form action="{{url_for('nanny.book')}}" method="POST">
+
+      <dl>
+        {% block scripts %}
+        {{ super() }}
+        <script>
+          $(document).ready(function () {
+            $('#begindate').datepicker({
+              dateFormat: 'yy-mm-dd',
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "-10:+100",
+              clickInput: true,
+
+              onSelect: function (date) {
+                loadMusterChit();
+              }
+
+            });
+          });
+
+          $(document).ready(function () {
+            $('#enddate').datepicker({
+              dateFormat: 'yy-mm-dd',
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "-10:+100",
+              clickInput: true,
+
+              onSelect: function (date) {
+                loadMusterChit();
+              }
+
+            });
+          });
+          endndate
+        </script>
+        {% endblock %}
+        <div class="container">
+          <div class="w3-content w3-container w3-padding-64 w3-margin-bottom">
+            <form action="{{url_for('nanny.book')}}" method="POST">
+              {{ form.csrt_token }}
+
+
+
+              <label for="city">Choose a City</label>
+              <select id="city" name="city" required>
+                <option value="Siena">Siena</option>
+                <option value="Milano">Milano</option>
+                <option value="Roma">Roma</option>
+                <option value="Venice">Venice</option>
+              </select><br><br>
+
+              <p><input type=submit value=Book>
+              </p>
+              <p>{{ message }}</p>
+      </dl>
+
+      <input type="text" name="begindate" id="begindate" placeholder="Start Date" />
+      <input type="text" name="enddate" id="enddate" placeholder="End Date" />
+
+
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
